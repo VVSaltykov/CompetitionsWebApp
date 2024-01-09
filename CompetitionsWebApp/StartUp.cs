@@ -1,7 +1,9 @@
-﻿using CompetitionsWebApp.API.Interfaces;
+﻿using CompetitionsWebApp.API;
+using CompetitionsWebApp.API.Interfaces;
 using CompetitionsWebApp.API.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace CompetitionsWebApp
@@ -21,6 +23,8 @@ namespace CompetitionsWebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationContext>(options =>
+                    options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => //CookieAuthenticationOptions
                 {
@@ -35,6 +39,7 @@ namespace CompetitionsWebApp
                 options.MaxModelValidationErrors = 50;
                 options.EnableEndpointRouting = false;
             });
+
         }
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)

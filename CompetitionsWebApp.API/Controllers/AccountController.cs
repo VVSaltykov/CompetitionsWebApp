@@ -6,14 +6,15 @@ using CompetitionsWebApp.API.Repositories;
 using CompetitionsWebApp.Common.ViewModels;
 using CompetitionsWebApp.Common.Exceptions;
 using CompetitionsWebApp.Common.Models;
+using CompetitionsWebApp.API.Interfaces;
 
 namespace CompetitionsWebApp.API.Controllers
 {
     [Controller]
     public class AccountController : Controller
     {
-        private readonly UserRepository userRepository;
-        public AccountController(UserRepository userRepository)
+        private readonly IUserRepository userRepository;
+        public AccountController(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
         }
