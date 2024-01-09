@@ -1,4 +1,4 @@
-﻿@using CompetitionsWebApp.ViewModels;
+﻿@using CompetitionsWebApp.Common.ViewModels;
 @model LoginViewModel
 @{
     Layout = null;
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <title>Local</title>
 </head>
-<form asp-action="Login" asp-controller="Account">
+<form asp-action="Login">
 <link rel="stylesheet" href="~/assets/css/app.css">
 <link rel="stylesheet" href="~/assets/css/style.css">
 <div class="container" align="middle" style="height: 100vh;">
@@ -40,7 +40,7 @@
                 </form>
             </div>
                 <div>
-                    <form method="post" asp-area="" asp-controller="Account" asp-action="Register">
+                    <form method="post" asp-area="" asp-action="Register">
                         <button type="submit" class="regbtn">Регистрация</button>
                     </form>
                 </div>

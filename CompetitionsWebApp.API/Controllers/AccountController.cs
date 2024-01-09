@@ -1,21 +1,21 @@
-﻿using CompetitionsWebApp.ViewModels;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using CompetitionsWebApp.Repositories;
-using CompetitionsWebApp.Models;
-using CompetitionsWebApp.Exceptions;
+using CompetitionsWebApp.API.Repositories;
+using CompetitionsWebApp.Common.ViewModels;
+using CompetitionsWebApp.Common.Exceptions;
+using CompetitionsWebApp.Common.Models;
 
-namespace CompetitionsWebApp.Controllers
+namespace CompetitionsWebApp.API.Controllers
 {
     [Controller]
     public class AccountController : Controller
     {
         private readonly UserRepository userRepository;
-        public AccountController(UserRepository accountRepository)
+        public AccountController(UserRepository userRepository)
         {
-            this.userRepository = accountRepository;
+            this.userRepository = userRepository;
         }
 
         [HttpGet]

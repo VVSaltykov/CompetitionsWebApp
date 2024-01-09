@@ -1,10 +1,11 @@
-﻿using CompetitionsWebApp.Models;
-using CompetitionsWebApp.ViewModels;
+﻿using CompetitionsWebApp.API.Interfaces;
+using CompetitionsWebApp.Common.Models;
+using CompetitionsWebApp.Common.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
-namespace CompetitionsWebApp.Repositories
+namespace CompetitionsWebApp.API.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly ApplicationContext appContext;
 

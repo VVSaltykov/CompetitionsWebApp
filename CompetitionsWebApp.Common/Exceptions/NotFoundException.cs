@@ -1,4 +1,10 @@
-﻿namespace CompetitionsWebApp.Exceptions
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CompetitionsWebApp.Common.Exceptions
 {
     /// <summary>
     /// Fires when the element is not found in the database.
